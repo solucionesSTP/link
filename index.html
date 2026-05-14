@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoel Proenza</title>
+    <title>Enlaces - Asesor Legal y Especialista en Ventas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         @import url('https://cdn.jsdelivr.net/npm/fontsource@latest/poppins/index.css');
@@ -50,7 +49,7 @@
             border-radius: 24px;
             padding: 40px 30px 35px;
             text-align: center;
-            box-shadow:
+            box-shadow: 
                 0 20px 60px rgba(10, 46, 110, 0.5),
                 0 0 40px rgba(21, 101, 192, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -89,7 +88,7 @@
             border-radius: 50%;
             padding: 4px;
             background: linear-gradient(145deg, #4fc3f7, #1565c0, #4fc3f7);
-            box-shadow:
+            box-shadow: 
                 0 0 30px rgba(79, 195, 247, 0.3),
                 0 0 60px rgba(21, 101, 192, 0.15);
             animation: pulseGlow 3s ease-in-out infinite;
@@ -114,7 +113,6 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
@@ -133,6 +131,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
+            display: block;
         }
 
         .profile-name {
@@ -213,7 +212,7 @@
         .link-btn:hover {
             transform: translateY(-3px) scale(1.02);
             background: linear-gradient(135deg, rgba(25, 118, 210, 0.85), rgba(30, 90, 180, 0.9));
-            box-shadow:
+            box-shadow: 
                 0 8px 30px rgba(21, 101, 192, 0.4),
                 0 0 20px rgba(79, 195, 247, 0.15);
             border-color: rgba(79, 195, 247, 0.4);
@@ -304,7 +303,6 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -312,41 +310,26 @@
         }
 
         @keyframes pulseGlow {
-
-            0%,
-            100% {
-                box-shadow:
+            0%, 100% {
+                box-shadow: 
                     0 0 30px rgba(79, 195, 247, 0.3),
                     0 0 60px rgba(21, 101, 192, 0.15);
             }
-
             50% {
-                box-shadow:
+                box-shadow: 
                     0 0 40px rgba(79, 195, 247, 0.5),
                     0 0 80px rgba(21, 101, 192, 0.25);
             }
         }
 
         @keyframes rotateSlow {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         @keyframes heartbeat {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         @media (max-width: 480px) {
@@ -383,19 +366,17 @@
         }
     </style>
 </head>
-
 <body>
     <canvas id="starCanvas"></canvas>
 
     <div class="container">
         <div class="profile-card">
             <div class="photo-wrapper">
-                <div class="photo-inner" id="photoUpload">
-                    <i class="fas fa-camera"></i>
-                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <div class="photo-inner">
+                    <img src="https://i.ibb.co/SDZT1ZGC/foto.png" alt="Foto de perfil" onerror="this.onerror=null; this.src=''; this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-camera\'></i>';">
                 </div>
             </div>
-            <div class="profile-name">Yoel Proenza Álvarez</div>
+            <div class="profile-name">Yoel Proenza Alvarez</div>
             <div class="profile-slogan">
                 <span>Asesor Legal</span> y <span>Especialista en Ventas</span>
             </div>
@@ -404,11 +385,11 @@
         <div class="divider"></div>
 
         <div class="links-section">
-            <a href="https://solucionesstp.github.io/pagina_venta" class="link-btn" target="_blank" rel="noopener">
+            <a href="#" class="link-btn" target="_blank" rel="noopener">
                 <div class="link-icon icon-website">
                     <i class="fas fa-globe"></i>
                 </div>
-                <span class="link-label">Sitio Web - Servicios</span>
+                <span class="link-label">Sitio Web</span>
                 <i class="fas fa-chevron-right link-arrow"></i>
             </a>
 
@@ -478,8 +459,8 @@
                     twinklePhase: Math.random() * Math.PI * 2,
                     driftX: (Math.random() - 0.5) * 0.15,
                     driftY: Math.random() * 0.08 + 0.02,
-                    color: Math.random() > 0.85
-                        ? `hsl(${Math.random() * 60 + 200}, 80%, 80%)`
+                    color: Math.random() > 0.85 
+                        ? `hsl(${Math.random() * 60 + 200}, 80%, 80%)` 
                         : '#ffffff'
                 });
             }
@@ -500,10 +481,10 @@
         }
 
         function drawStars(time) {
-            starsArray.forEach(function (star) {
+            starsArray.forEach(function(star) {
                 star.twinklePhase += star.twinkleSpeed;
                 star.alpha = star.baseAlpha + Math.sin(star.twinklePhase) * 0.3;
-
+                
                 star.x += star.driftX;
                 star.y += star.driftY;
 
@@ -534,7 +515,7 @@
         }
 
         function drawShootingStars() {
-            shootingStarsArray = shootingStarsArray.filter(function (ss) {
+            shootingStarsArray = shootingStarsArray.filter(function(ss) {
                 ss.x += Math.cos(ss.angle) * ss.speed;
                 ss.y += Math.sin(ss.angle) * ss.speed;
                 ss.alpha -= ss.decay;
@@ -545,12 +526,12 @@
                 ctx.beginPath();
                 const endX = ss.x - Math.cos(ss.angle) * ss.length;
                 const endY = ss.y - Math.sin(ss.angle) * ss.length;
-
+                
                 const gradient = ctx.createLinearGradient(endX, endY, ss.x, ss.y);
                 gradient.addColorStop(0, `rgba(255, 255, 255, 0)`);
                 gradient.addColorStop(0.7, `rgba(180, 220, 255, ${ss.alpha * 0.5})`);
                 gradient.addColorStop(1, `rgba(255, 255, 255, ${ss.alpha})`);
-
+                
                 ctx.strokeStyle = gradient;
                 ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
@@ -595,34 +576,10 @@
         createStars();
         animate(0);
 
-        window.addEventListener('resize', function () {
+        window.addEventListener('resize', function() {
             resizeCanvas();
             createStars();
         });
-
-        // Photo upload functionality
-        const photoUpload = document.getElementById('photoUpload');
-        const fileInput = document.getElementById('fileInput');
-
-        photoUpload.addEventListener('click', function () {
-            fileInput.click();
-        });
-
-        fileInput.addEventListener('change', function (e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const img = document.createElement('img');
-                    img.src = event.target.result;
-                    photoUpload.innerHTML = '';
-                    photoUpload.appendChild(img);
-                    photoUpload.appendChild(fileInput);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
     </script>
 </body>
-
 </html>
